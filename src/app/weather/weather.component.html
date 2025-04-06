@@ -1,0 +1,28 @@
+<button (click)="changeWeather('sunny')">Słoneczna</button>
+<button (click)="changeWeather('rainy')">Deszczowa</button>
+<button (click)="changeWeather('snowy')">Śnieżna</button>
+<button (click)="changeWeather('foggy')">Mglista</button>
+<button (click)="changeWeather('unknown')">Inna pogoda</button>
+
+<div [ngSwitch]="selectedWeather">
+    <div *ngSwitchCase="'sunny'">
+        <h3>☀️ Słoneczny dzień! ☀️</h3>
+        <p>Ciepło i przyjemnie! Idealny dzień na spacer. 🏞️</p>
+    </div>
+    <div *ngSwitchCase="'rainy'">
+        <h3>🌧️ Deszczowy dzień! 🌧️</h3>
+        <P>Kap, kap... może wypijemy gorącą herbatkę? ☕</P>
+    </div>
+    <div *ngSwitchCase="'snowy'">
+        <h3>❄️ Śnieżny dzień! ❄️</h3>
+        <p>Śnieżynki wirują w powietrzu, czas na bałwana! ☃️</p>
+    </div>
+    <div *ngSwitchCase="'foggy'">
+        <h3>🌫️ Mglisty dzień! 🌫️</h3>
+        <p>Tajemnicza mgła spowija krajobraz... idealny moment na książkę! 📖</p>
+    </div>
+    <div *ngSwitchDefault>
+        <h3>🌍 Wybierz pogodę!</h3>
+        <p>Kliknij jeden z przycisków, aby zobaczyć, jaka aura nas czeka. ☀️🌧️❄️</p>
+    </div>
+</div>

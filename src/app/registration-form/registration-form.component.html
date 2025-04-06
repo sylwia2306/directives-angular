@@ -1,0 +1,19 @@
+
+<form #registerForm="ngForm">
+    <p>Imię: {{name}}</p>
+    <input type="text" [(ngModel)]="name" name="name" required>
+    <p>Nazwisko: {{surname}}</p>
+    <input type="text" [(ngModel)]="surname" name="surname" required>
+    <p>Email: {{email}}</p>
+    <input type="text" [(ngModel)]="email" name="email" required>
+    <p>Wiek: {{age}}</p>
+    <input type="number" [(ngModel)]="age" name="age">
+    <p>Hasło: {{password}}</p>
+    <input type="text" [(ngModel)]="password" name="password" required>
+    <p>Hasło: {{passwordConfirmation}}</p>
+    <input type="text" [(ngModel)]="passwordConfirmation" name="passwordConfirmation" required>
+    <br><br>
+    <button (click)="button(registerForm)" [disabled]="registerForm.invalid">Zarejestruj się</button>
+</form>
+
+<p appHighlight >Najedz na mnie</p>

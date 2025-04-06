@@ -1,0 +1,41 @@
+<div [style.backgroundColor]="'red'">
+dasdas
+</div>
+
+
+
+<input type="text" (input)="onChange($event)">
+
+
+
+
+<div class="checkBon">
+    <form #checkBonForm = "ngForm">
+        <fieldset changeBackground [color]="'pink'" [size]="10">
+            <legend>Wybierz swój zawód:</legend>
+            <label><input [(ngModel)]="check" type="radio" value="1" name="check-carier" required>Murarz</label>
+            <label><input [(ngModel)]="check" type="radio" value="2" name="check-carier" required>Tynkarz</label>
+            <label><input [(ngModel)]="check" type="radio" value="3" name="check-carier" required>Pediatra</label>
+            <label><input [(ngModel)]="check" type="radio" value="4" name="check-carier" required>Inny</label>
+        </fieldset>
+        <label changeBackground [color]="'purple'"><p>Podaj swoje wynagrodzenie</p>
+            <input [(ngModel)]="amount" type="number" name="amount" step="10" required>
+            <span>PLN</span>
+        </label>
+        <label><p>Podaj liczbę mieszkańców swojego miasta</p>
+            <input [(ngModel)]="residents" type="number" name="residents-amount" step="10">
+            <span>tys</span>
+        </label>
+        <label><p>Podaj odległość od miejsca zamieszkania do pracy(KM)</p>
+            <input [(ngModel)]="distance" type="number" name="distance" step="10" required>
+            <span>KM</span>
+        </label>
+        <br>
+        <br>
+        <button (click)="checkBon()" [disabled]="checkBonForm.invalid">Sprawdź czy możesz dostać bon</button>
+    </form>
+</div>
+<div>
+    <p *ngIf="isBon === true">Tak, możesz dostać bon</p>
+    <p *ngIf="isBon === false">Nie możesz dostać bonu</p>
+</div>

@@ -1,0 +1,16 @@
+<ul *ngFor="let task of tasks">
+    <div [ngClass]="{'bg-color-red': task.status === 'TO DO',
+        'bg-color-green': task.status === 'DONE',
+        'bg-color-gray' : task.status === 'IN PROGRESS'
+    }"> 
+        <span [ngStyle]="{'font-size.px': task.priority }">
+            {{task.name}}
+        </span>
+        <span [hidden]="task.status == 'DONE'">
+            {{task.status}}
+        </span>
+        {{task.priority}}
+        <button [disabled]="task.status !== 'TO DO'">EDYTUJ</button>
+        <p *ngIf="task.status == 'DONE'">ZADANIE ZAKOŃCZONE</p>
+    </div>
+</ul>

@@ -1,0 +1,56 @@
+
+<div [ngStyle]="{'background-color': 'purple',
+    'width.px': wielkosc,
+    'height.px' : wielkosc
+}">
+</div>
+
+<button (click)="up()">UP</button>
+<button (click)="down()">DOWN</button>
+
+<button [disabled]="age < 18" (click)="playPorno()">PORNO</button>
+<button [hidden]="age > 18" (click)="playBajki()">BAJKI</button>
+<p>{{userName | uppercase}}</p>
+<input type="text" placeholder="Wprowadź imię" [(ngModel)]="userName">
+<input type="text" [(ngModel)]="color">
+<input type="number" [(ngModel)]="year">
+<p>{{color}}</p>
+<p>{{year}}</p>
+
+<form #productForm="ngForm">
+    <input type="text" [(ngModel)]="productName" name="productNameXYZ" required>
+
+    <button [disabled]="productForm.invalid">Dodaj produkt</button>
+</form>
+
+<app-button></app-button>
+
+<!-- <ng-template #noUsers>
+    
+    <p>Lista użytkowników jest ukryta.</p>
+
+</ng-template>
+
+
+<button (click)="toggle()">
+    <span *ngIf="isVisible == true">ukryj</span>
+    <span *ngIf="isVisible == false">pokaż</span>
+</button>
+
+<ul *ngIf="isVisible == true; else noUsers">
+    <li *ngFor="let element of users">
+        {{element.name}}
+
+        <span [ngSwitch]="element.role">
+            <span *ngSwitchCase="'admin'">Administrator</span>
+            <span *ngSwitchCase="'moderator'">Moderator</span>
+            <span *ngSwitchCase="'user'">Użytkownik</span>
+            <span *ngSwitchDefault>Gość</span>
+        </span>
+
+    </li>
+</ul> -->
+
+
+
+

@@ -1,0 +1,33 @@
+// :host {
+//      display: block;
+//      background-color: red;
+// }
+
+
+:host app-button ::ng-deep .open {
+        background-color: red !important
+}
+
+.admin-role{
+    color: green;
+}
+
+.user-role{
+    color: yellow;
+}
+
+.guest-role{
+    color:brown;
+}
+
+.moderator-role{
+    color: orange;
+}
+
+.adult{
+    color:green;
+}
+
+.child{
+    color:red;
+}

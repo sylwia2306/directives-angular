@@ -1,0 +1,13 @@
+<ul *ngFor="let flower of flowers">
+    <li *ngIf="'Fiołek' !== flower.name">
+      <span [ngStyle]="{
+        'color': flower.color
+        }"> {{flower.name}}</span>
+        {{flower.emoji}}
+        {{flower.color}}
+        {{flower.meaning}}
+    </li>
+
+</ul>
+
+<app-button></app-button>

@@ -1,0 +1,35 @@
+<div class="calculator">
+    <p>Kalkulator</p>
+    <form #calculatorForm = "ngForm">
+        <label for="description">Opis:</label>
+        <textarea type="text" [(ngModel)]="description" name="description" id="description" rows="3" cols="40" maxlength="200"></textarea>
+       <fieldset>
+            <legend>Sposób obliczania</legend>
+            <label><input [(ngModel)]="option" type="radio" value="1" name="option-calculate" checked required>brutto na netto</label>
+            <label><input [(ngModel)]="option" type="radio" value="2" name="option-calculate" required>netto na brutto</label>
+       </fieldset>
+        <label><p>Kwota:</p>
+            <input [(ngModel)]="amount" type="number" name="amount" step="1" required>
+            <span>PLN</span>
+        </label>
+        <label for="vat"><p>Stawka VAT:</p></label>
+        <select [(ngModel)]="vat" name="vat" id="vat" required>
+            <option value="23" selected>23%</option>
+            <option value="22">22%</option>
+            <option value="8">8%</option>
+            <option value="7">7%</option>
+        </select>
+        <br>
+        <button (click)="clearFields()">Wyczyść pola</button>
+        <button (click)="calculateResult()" [disabled]="calculatorForm.invalid">Oblicz</button>
+    </form>
+</div>
+<div *ngIf="isVisible">
+    <p>Obliczona kwota vat :{{resultVat | number:'1.2-2'}}</p>
+    <p *ngIf="option==='1'">Obliczona kwota netto :{{resultAmount | number:'1.2-2'}}</p>
+    <p *ngIf="option==='2'">Obliczona kwota brutto :{{resultAmount | number:'1.2-2'}}</p>
+    <p>Opis:{{description}}</p>
+    <p>Sp:{{option}}</p>
+    <p>kwota:{{amount}}</p>
+    <p>vat:{{vat}}</p>
+</div>
